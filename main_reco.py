@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from ml_model import init_model, get_recommendations
+from utils.ml_model import init_model, get_recommendations
 
 #Page configuration
 st.set_page_config(
