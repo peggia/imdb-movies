@@ -82,13 +82,14 @@ if section == "Latam Movies":
  
                 #display and next step : https://docs.streamlit.io/develop/tutorials/elements/dataframe-row-selections
                 st.dataframe(
-                    similar_movies[['fullTitle','startYear','genres','directors','production_countries','averageRating',
+                    similar_movies[['fullTitle','imdb_link','startYear','genres','directors','production_countries','averageRating',
                                     'numVotes',]].head(100), hide_index=True,
                     column_config={
-                         
-                           "fullTitle": st.column_config.TextColumn(
-                                "Title", width="large"
-                            ),
+                            "fulltitle": st.column_config.TextColumn(
+                                "Title",width="large"
+                            ),           
+                            "imdb_link": st.column_config.LinkColumn(
+                                "IMDB Info",display_text="Details", width="small"),
                             "startYear": st.column_config.NumberColumn(
                                 "startYear", width="small"
                             ),
@@ -99,7 +100,7 @@ if section == "Latam Movies":
                                 "Countries", width="small"
                             ),
                             "genres": st.column_config.TextColumn(
-                                "Genres", width="Medium"
+                                "Genres", width="medium"
                             ),
                             "averageRating": st.column_config.NumberColumn(
                                 "imdb Rating",
